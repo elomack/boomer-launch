@@ -181,6 +181,15 @@ h2 {
   object-fit: contain;
 }
 
+.clippy {
+    display: block;
+    margin: -10px auto 12px auto;
+    width: 110px;
+    height: auto;
+    image-rendering: pixelated;
+  }
+  
+
 @media (max-width: 480px) {
   .content {
     padding: 8px 12px;
