@@ -181,14 +181,61 @@ h2 {
   object-fit: contain;
 }
 
+.clippy-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4px auto 12px auto;
+  width: fit-content;
+}
+
+.speech-bubble {
+  background: #ffffff;
+  border: 2px solid #000080;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  font-size: 12px;
+  color: #000080;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  max-width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+  z-index: 1;
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 9px;
+  border-style: solid;
+  border-color: #000080 transparent transparent transparent;
+  z-index: 0;
+}
+
 .clippy {
-    display: block;
-    margin: -10px auto 12px auto;
-    width: 110px;
-    height: auto;
-    image-rendering: pixelated;
-  }
-  
+  display: block;
+  margin: -10px auto 12px auto;
+  width: 110px;
+  height: auto;
+  image-rendering: pixelated;
+}
 
 @media (max-width: 480px) {
   .content {
