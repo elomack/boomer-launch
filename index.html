@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOMER Launch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">
+        <span class="title">BOOMER launch</span>
+        <div class="window-controls">
+          <button>X</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="header">
+          <img
+            src="images/email-icon.png"
+            alt="Retro Email Icon"
+            class="icon"
+          />
+          <h1>BOOMER launch</h1>
+          <h2>Launch a Solana memecoin via email</h2>
+        </div>
+
+        <p class="description">
+          Bored at your 9-5 desk job? The boomer launchpad you've always dreamed
+          of has arrived. Fire up AOL, send an email, and your bags are
+          deployed. Too easy. Now shill it to your fellow boomer coworkers and
+          watch it moon.
+        </p>
+
+        <pre class="email-format">
+Name:
+Ticker:
+Description:
+X URL (optional):
+Website URL (optional):
+Telegram URL (optional):
+      </pre
+        >
+
+        <a
+          class="launch-button"
+          href="mailto:coin@launch.example?subject=New%20Boomercoin&body=Name:%0ATicker:%0ADescription:%0AX%20URL%20(optional):%0AWebsite%20URL%20(optional):%0ATelegram%20URL%20(optional):"
+        >
+          LAUNCH ON EMAIL
+        </a>
+      </div>
+
+      <div class="footer">
+        <img src="images/cloud-icon.png" alt="Clouds Icon" />
+        <span>Cirqus</span>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sparkles = [];
+        const maxSparkles = 10;
+        const fadeTime = 500; // milliseconds
+
+        for (let i = 0; i < maxSparkles; i++) {
+          const sparkle = document.createElement("div");
+          sparkle.className = "sparkle";
+          sparkle.style.opacity = "0";
+          document.body.appendChild(sparkle);
+          sparkles.push(sparkle);
+        }
+
+        let lastMove = Date.now();
+
+        document.addEventListener("mousemove", (e) => {
+          const now = Date.now();
+          lastMove = now;
+
+          const s = sparkles.shift();
+          s.style.left = e.pageX + "px";
+          s.style.top = e.pageY + "px";
+          s.style.opacity = "1";
+          s.style.transition = `opacity ${fadeTime}ms ease`;
+          sparkles.push(s);
+        });
+
+        // Fade sparkles after inactivity
+        setInterval(() => {
+          const idle = Date.now() - lastMove;
+          if (idle > 150) {
+            sparkles.forEach((s) => {
+              s.style.opacity = "0";
+            });
+          }
+        }, 100);
+
+        // Hide trail if mouse leaves window
+        document.addEventListener("mouseleave", () => {
+          sparkles.forEach((s) => (s.style.opacity = "0"));
+        });
+      });
+    </script>
+  </body>
+</html>

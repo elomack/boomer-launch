@@ -1,0 +1,137 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY SETUP */
+body {
+  background: linear-gradient(to bottom, #c4d4ff, #ffffff);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* WINDOW STYLE */
+.window {
+  width: 600px;
+  border: 3px solid #000080;
+  box-shadow: 6px 6px 0 #000;
+  background: #f0f0ff;
+}
+
+/* TITLE BAR */
+.title-bar {
+  background: #000080;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.window-controls button {
+  background: red;
+  border: none;
+  width: 16px;
+  height: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header .icon {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #cc00cc;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+h2 {
+  font-size: 16px;
+  color: #333399;
+  margin-top: 4px;
+}
+
+/* DESCRIPTION */
+.description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* EMAIL FORMAT */
+.email-format {
+  background: #fff;
+  border: 2px dashed #999;
+  padding: 12px;
+  font-family: monospace;
+  margin-bottom: 20px;
+}
+
+/* LAUNCH BUTTON */
+.launch-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #00cc00;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #006600;
+  box-shadow: 2px 2px 0 #003300;
+  transition: background 0.2s;
+}
+
+.launch-button:hover {
+  background: #00e600;
+}
+
+/* FOOTER */
+.footer {
+  padding: 10px;
+  background: #e0e0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #444;
+}
+
+.footer img {
+  height: 20px;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: yellow;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 4px 2px white;
+  z-index: 9999;
+  opacity: 0;
+}
